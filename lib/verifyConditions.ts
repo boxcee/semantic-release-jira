@@ -37,8 +37,8 @@ export async function verifyConditions(config: PluginConfig, context: PluginCont
   }
 
   if (config.releaseNameTemplate) {
-    if (typeof config.releaseNameTemplate !== 'string' || config.releaseNameTemplate!.indexOf('${version}') === -1) {
-      throw new SemanticReleaseError('config.releaseNameTemplate must be a string containing ${version}');
+    if (typeof config.releaseNameTemplate !== 'string') {
+      throw new SemanticReleaseError('config.releaseNameTemplate must be a string');
     }
   }
 
